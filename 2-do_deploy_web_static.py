@@ -24,7 +24,7 @@ def do_pack():
         local('tar -cvzf {} web_static'.format(archive_path))
         print('web_static packed: {} -> {}'.format(archive_path,
               os.path.getsize(archive_path)))
-    except:
+    except Exception as e:
         return None
 
 
@@ -48,5 +48,5 @@ def do_deploy(archive_path):
         run('ln -s {} /data/web_static/current'.format(releases_path))
         print('New version deployed!')
         return True
-    except:
+    except Exception as e:
         return False
