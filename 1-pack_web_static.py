@@ -7,6 +7,7 @@ of the web_static folder
 from fabric.api import local
 from datetime import datetime
 
+
 def do_pack():
     """
     generates a .tgz archive from the contents of the web_static folder
@@ -19,11 +20,3 @@ def do_pack():
         return archive_name
     else:
         return None
-
-# Example usage:
-if __name__ == "__main__":
-    archive_path = do_pack()
-    if archive_path:
-        print(f"Archive created: {archive_path}")
-    else:
-        print("Archive creation failed.")
