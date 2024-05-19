@@ -68,9 +68,14 @@
 	display: none;
 	z-index: 1;
 	padding: 5% 0.7% 5% 6.6%;
-	/* overflow-y: auto;
-    max-height: 300px; */
+	overflow-y: auto;
+    max-height: 300px;
 }
+
+
+.popover::-webkit-scrollbar {
+	display: none;
+  }
 
 .locations h2 {
 	margin-bottom: 1px;
