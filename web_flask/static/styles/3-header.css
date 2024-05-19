@@ -1,18 +1,16 @@
 header {
-	background-color: white;
+	background-color: #ffffff;
 	height: 70px;
 	width: 100%;
-	
 	border-bottom: 1px solid #CCCCCC;
+	display: flex;
+	align-items: center;
 }
 
-#header_logo {
+.logo {
+	width: 145px;
 	height: 100%;
-	width: 142px;
-
-	background-image: url("../images/logo.png");
-	background-repeat: no-repeat;
-	background-position: center;
-
+	background-image: url(../images/logo.png);
+	background-position: left center;
 	margin-left: 20px;
 }
