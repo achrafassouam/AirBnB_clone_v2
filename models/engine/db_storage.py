@@ -43,22 +43,20 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-        '''query on the current db session all cls objects
-        this method must return a dictionary: (like FileStorage)
-        key = <class-name>.<object-id>
-        value = object
-        '''
+        """Query on the current db session all objects of the given class"""
         dct = {}
         if cls is None:
             for c in classes.values():
                 objs = self.__session.query(c).all()
                 for obj in objs:
-                    key = obj.__class__.__name__ + '.' + obj.id
+                    key = f"{obj.__class__.__name__}.{obj.id}"
                     dct[key] = obj
         else:
+            if isinstance(cls, str):
+                cls = classes[cls]
             objs = self.__session.query(cls).all()
             for obj in objs:
-                key = obj.__class__.__name__ + '.' + obj.id
+                key = f"{obj.__class__.__name__}.{obj.id}"
                 dct[key] = obj
         return dct
 
